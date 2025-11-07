@@ -1,0 +1,143 @@
+:root {
+  --naranja: #e9965a;
+  --menta: #b8e0d2;
+  --aqua: #8ed1fc;
+  --texto: #333;
+  --fondo: #fffaf6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.logo-container img {
+  width: 80px;
+  border-radius: 10px;
+}
+
+.profile {
+  margin-top: 20px;
+}
+
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid var(--menta);
+  object-fit: cover;
+}
+
+/* SECCIONES */
+section {
+  margin: 40px auto;
+  width: 90%;
+  background-color: #ffffffd9;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+section h2 {
+  color: var(--naranja);
+  border-bottom: 2px solid var(--menta);
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+/* 🎞️ VIDEOS EN CARRUSEL */
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 25px;
+  animation: scroll 20s linear infinite;
+}
+
+.carousel-track video {
+  width: 280px;
+  aspect-ratio: 9 / 16;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.carousel-track video:hover {
+  transform: scale(1.05);
+}
+
+/* 🎠 ANIMACIÓN */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* 📱 BARRA FLOTANTE */
+.social-bar {
+  position: fixed;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}
+
+.social-icon {
+  background: var(--naranja);
+  color: white;
+  font-size: 22px;
+  padding: 12px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.social-icon:hover {
+  background: var(--aqua);
+  transform: scale(1.1);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin: 40px 0 20px;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .carousel-track video {
+    width: 220px;
+  }
+}
